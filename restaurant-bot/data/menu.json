@@ -1,0 +1,13 @@
+[
+    {"name": "Honey Butter Fried Chicken", "desc": "crispy chicken glazed with honey butter", "tags": ["sweet","chicken","fried"], "popularity": 0.85},
+    {"name": "Spicy Sambal Prawns", "desc": "stir-fried prawns with sambal and chili", "tags": ["spicy","seafood","prawns"], "popularity": 0.8},
+    {"name": "Tom Yum Soup", "desc": "hot and sour Thai soup", "tags": ["spicy","sour","soup","seafood"], "popularity": 0.75},
+    {"name": "Mango Sticky Rice", "desc": "dessert with ripe mango and coconut milk", "tags": ["sweet","dessert","vegan"], "popularity": 0.7},
+    {"name": "Black Pepper Beef", "desc": "stir-fried beef with black pepper sauce", "tags": ["savory","peppery","beef","mild"], "popularity": 0.72},
+    {"name": "Ayam Masak Merah", "desc": "tomato-chili braised chicken", "tags": ["spicy","sweet","chicken"], "popularity": 0.78},
+    {"name": "Vegetable Pad Thai", "desc": "rice noodles with veggies and peanuts", "tags": ["savory","mild","vegetarian"], "popularity": 0.68},
+    { "name": "Vanilla Milkshake", "tags": ["drink", "dessert", "sweet"], "popularity": 0.62, "desc": "Creamy vanilla blend" },
+     { "name": "Chocolate Milkshake", "tags": ["drink", "dessert", "sweet"], "popularity": 0.58, "desc": "Rich chocolate shake" },
+    { "name": "Curry Puff", "tags": ["snack", "pastry"], "popularity": 0.45, "desc": "Flaky pastry with curry filling" },
+    { "name": "Chicken Puff", "tags": ["snack", "pastry"], "popularity": 0.41, "desc": "Savory chicken pastry" }
+]

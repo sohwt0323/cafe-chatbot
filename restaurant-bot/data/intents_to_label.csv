@@ -1,0 +1,249 @@
+text,suggested_intent
+hey,greet
+do u have coffee,dish_query
+i will take one espresso and 5 americano,
+anything special,
+suggest something,
+"do You have Coffee Cappuchino, Americano, Au Laite Au Laite, Cappucchino, Chans Espresso, Con Panna, Black Coffee ,Espresso ,Frappe, French Coffee ,Iced Coffee, Late ,Irish Coffee ,Latte Macchiato ,Wainans Choco Coffee",dish_query
+"Do You have Coffee Cappuchino, Americano, Au Laite Au Laite, Cappucchino, Chans Espresso, Con Panna, Black Coffee ,Espresso ,Frappe, French Coffee ,Iced Coffee, Late ,Irish Coffee ,Latte Macchiato ,Wainans Choco Coffee",dish_query
+"do u have Coffee Cappuchino, Americano, Au Laite Au Laite, Cappucchino, Chans Espresso, Con Panna, Black Coffee ,Espresso ,Frappe, French Coffee ,Iced Coffee, Late ,Irish Coffee ,Latte Macchiato ,Wainans Choco Coffee",dish_query
+what special do u have,
+hello,greet
+what special do u have,
+do you have,
+what do you have coffee,dish_query
+do you have espresso,
+do you have coffee,dish_query
+what do you have,
+do u have coffee,dish_query
+i will take one espresso and 2 americano,
+suggest something,
+what do u think we should have,
+hello,greet
+what do u have,
+what do u have,
+what do you have,
+do you have h,
+do you have,
+do u have milkshake,
+I will take one espresso and 2 americano,
+"do you have Chocolate and Vanila Combo,Avocado Shake,Apple pomegranate juice,Drumstick Milkshake,Pumpkin Shake,Malted Chocolate,Oreo Shake,Pista Shake,Mix Fruit Smothie,Tiramisu Milkshake,Banana Cream treat,Cotton candy shake,Cranberry Orange,Mint White Chocolate,Cheery Vanila,Peanut Vanila,Salted Caramel Pretzel and Smores",
+"Do You have Chocolate and Vanila Combo,Avocado Shake,Apple pomegranate juice,Drumstick Milkshake,Pumpkin Shake,Malted Chocolate,Oreo Shake,Pista Shake,Mix Fruit Smothie,Tiramisu Milkshake,Banana Cream treat,Cotton candy shake,Cranberry Orange,Mint White Chocolate,Cheery Vanila,Peanut Vanila,Salted Caramel Pretzel and Smores",
+"do u have Chocolate and Vanila Combo,Avocado Shake,Apple pomegranate juice,Drumstick Milkshake,Pumpkin Shake,Malted Chocolate,Oreo Shake,Pista Shake,Mix Fruit Smothie,Tiramisu Milkshake,Banana Cream treat,Cotton candy shake,Cranberry Orange,Mint White Chocolate,Cheery Vanila,Peanut Vanila,Salted Caramel Pretzel and Smores",
+what do you have milkshake,
+do you have milkshake,
+do u have milkshake,
+i will take one Avocado Shake and 2 Salted Caramel Pretzel,
+i will take one Chocolate and Vanila Combo and 5 americano,
+give me two red velvet please,
+thank you,goodbye
+what is in the menu,menu_items
+I will take one Mix Cupcake and 2 Strawberry Traimisu.,dish_query
+do u have dirty coffee,dish_query
+do u have good pastery,
+do you have  pastery,
+"do you have Red Velvet,Strawberry Traimisu,Black Forest,Black Tie Mose,Honey Slice,Walnut Pastry,Mango cream Bluree,Maxres Special,Pineapple Shot cake,Strawberry Basque,Vanila Layer,Fruit & Cheese cerame,Mix Cupcake,Macrons,Waffel Ice-cream,Waffel Choco ?",dish_query
+"do you have Red Velvet,Strawberry Traimisu,Black Forest,Black Tie Mose,Honey Slice,Walnut Pastry,Mango cream Bluree,Maxres Special,Pineapple Shot cake,Strawberry Basque,Vanila Layer,Fruit & Cheese cerame,Mix Cupcake,Macrons,Waffel Ice-cream,Waffel Choco?",dish_query
+what do you have pastery?,
+do u have pastery?,
+"do You have Vanila Layer,Fruit & Cheese cerame,Mix Cupcake,Macrons,Waffel Ice-cream,Waffel Choco.",dish_query
+do you have pastery,
+do you have Waffel Ice-cream?,
+do you have pastery?,
+"do You have Red Velvet,Strawberry Traimisu,Black Forest,Black Tie Mose,Honey Slice,Walnut Pastry,Mango cream Bluree,Maxres Special,Pineapple Shot cake,Strawberry Basque.?",dish_query
+no can u suggest something else,
+do u have bad pastery?,
+what should i take,
+ok i will have two waffle ice-cream.,
+ok i will take one,
+do u have pastery,
+What do you  have?,
+I will take one Red Velvet and 2 Strawberry Traimisu.,
+do u have pastery?,
+do u have puff pastery,
+I will take one  Blueberry Puff and 2  French Pastery,
+i will take one Cinnimon Orange rolls and 5 Simple Cherry Puff,
+i will take one Nutella Puff  and 3 Egg Puff,
+"do You have Blueberry Puff,Char Sui,Cinnimon Orange rolls,Easy Spinach,French Pastery,Beef Wellington,Keto Puff,Nutella Puff.",dish_query
+"Do You have Nutella Puff,Asparagus Puff,Egg Puff,Rough Puff,Simple Cherry Puff,Tart Social,Blaeter  tertei Puff.",
+"do u have Tanuki,Tomato Cheese,Blueberry Puff.",
+what do you have in puff pastery,
+do you have Blueberry Puff,
+do u have puff pastery,
+i will take one Keto Puff and 2 Blaeter  tertei Puff,
+"i will take one Rough Puff,Simple Cherry Puff and 2 Tomato Cheese puff.",
+do you have Chocolate and Vanila Combo,
+do you have milkshake,
+what can i get,
+what you have,
+what u have,
+excuse me do u have espresso,
+can i get have a milkshake,
+get me a Banana Cream treat,
+i would like to Banana Cream treat,
+i would like to Smores,
+need a milkshake,
+need a Cotton candy shake,
+want a Salted Caramel Pretze,
+have you Mix Fruit Smothie,
+have you milkshake,
+can i get extra sugar,
+I will have you espresso,
+do you have espresso,
+can u serve me,
+do u have,
+do u have espresso,
+do u have water,
+do u have something,
+can i have menu,menu_items
+i would like to have one espresso and 3 Cheery Vanila,
+do u have good milkshake,
+do u have bad milkshake,
+ok i will have two caffe latte,
+suggest me something,
+what is price of Americano,dish_query
+what is price of Egg Puff,dish_query
+what is im menu,menu_items
+what is price of Avocado Shake,dish_query
+what is price of Black Coffee,dish_query
+what is price of Espresso,dish_query
+what is price of Au Laite Cappucchino,dish_query
+what is price of Easy Spinach,dish_query
+what is price of Blueberry Puff,dish_query
+can i have 5 Waffel Ice-cream,
+recomend me something,
+what is price of Fruit & Cheese cerame,dish_query
+what is price of Honey Slice,dish_query
+what is price of Simple Coffee,dish_query
+what is price of French Pastery,dish_query
+what is price of  Blueberry Puff,dish_query
+what is price of Cinnimon Orange rolls,dish_query
+what is price of Simple Cherry Puff,dish_query
+what is price of Char Sui,dish_query
+what is price of Beef Wellington,dish_query
+what is price of Keto Puff,dish_query
+what is price of Nutella Puff,dish_query
+"what is price of Nutella Puff,Asparagus Puff,Egg Puff,Rough Puff,Simpl",dish_query
+what is price of Asparagus Puff,dish_query
+what is price of Rough Puff,dish_query
+what is price of Tart Social,dish_query
+what is price of Blaeter  tertei Puff,dish_query
+what is price of Macrons,dish_query
+what is price of Latte Macchiato,dish_query
+what is price of  Tanuki,dish_query
+what is price of Tomato Cheese,dish_query
+what is price of Chocolate and Vanila Combo,dish_query
+what is price of Drumstick Milkshake,dish_query
+what is price of Pumpkin Shake,dish_query
+what is price of Malted Chocolate,dish_query
+what is price of Oreo Shake,dish_query
+what is price of Pista Shake,dish_query
+what is price of Mix Fruit Smothie,dish_query
+what is price of Tiramisu Milkshake,dish_query
+what is price of Banana Cream treat,dish_query
+"what price of Cotton candy shake,Cranberry Orange,Mint White Chocolate",dish_query
+what is price of Cotton candy shake,dish_query
+can i have table for 2 on 2-4-20 at 11:00,make_reservation
+can i have 2 Americano,
+book me a table,make_reservation
+what is price of Cheery Vanila,dish_query
+what is price of Peanut Vanila,dish_query
+what is price of Red Velvet,dish_query
+what is price of Strawberry Traimisu,dish_query
+what is price of Black Forest,dish_query
+what is price of Black Tie Mose,dish_query
+what is price of Walnut Pastry,dish_query
+what is price of Mango cream Bluree,dish_query
+what is price of Maxres Special,dish_query
+what is price of Strawberry Basque,dish_query
+what is price of Vanila Layer,dish_query
+what is price of Waffel Ice-cream,dish_query
+what is price of Waffel Choco,dish_query
+what is price of  Simple Coffee,dish_query
+what is price of Cappuchino,dish_query
+what is price of Au Laite,dish_query
+what is price of Chans Espresso,dish_query
+what is price of Con Panna,dish_query
+what is price of Frappe,dish_query
+what is price of French Coffee,dish_query
+what is price of Iced Coffee Late,dish_query
+what is price of Wainans Choco Coffee,dish_query
+Question,
+How much is Tom Yum Soup?,dish_query
+Price of tom yam soup?,dish_query
+Berapa harga Tom Yum Soup?,dish_query
+Is Tom Yum Soup spicy?,dish_query
+How much is Honey Butter Fried Chicken?,dish_query
+Price of honey butter chicken?,dish_query
+Berapa harga Honey Butter Fried Chicken?,dish_query
+How much is Spicy Sambal Prawns?,dish_query
+Price of sambal prawns?,dish_query
+Berapa harga Sambal Udang?,
+Are Spicy Sambal Prawns very spicy?,dish_query
+Do Spicy Sambal Prawns contain seafood?,dish_query
+How much is Mango Sticky Rice?,dish_query
+Price of mango sticky rice?,dish_query
+Berapa harga Mango Sticky Rice?,dish_query
+Is Mango Sticky Rice vegan?,dish_query
+How much is Black Pepper Beef?,dish_query
+Price of black pepper beef?,dish_query
+Berapa harga Black Pepper Beef?,dish_query
+Is Black Pepper Beef spicy?,dish_query
+What does Black Pepper Beef taste like?,dish_query
+How much is Ayam Masak Merah?,price_query
+Price of ayam masak merah?,dish_query
+Berapa harga Ayam Masak Merah?,
+Is Ayam Masak Merah spicy?,dietary_options
+What does Ayam Masak Merah taste like?,
+How much is Vegetable Pad Thai?,price_query
+Price of veg pad thai?,dish_query
+Berapa harga Vegetable Pad Thai?,make_reservation
+Is Vegetable Pad Thai spicy?,dietary_options
+Is Vegetable Pad Thai vegetarian?,dietary_options
+Do you have something sweet and spicy?,dietary_options
+I like sweet and spicy food—what do you recommend?,menu_items
+Not spicy please. Any sweet dish?,dietary_options
+Recommend something spicy seafood?,menu_items
+Any peppery but not too hot dish?,
+Do you have a vegan dessert?,dish_query
+Is Tom Yum Soup halal friendly?,dish_query
+Do you have gluten-free options?,dietary_options
+What’s a good dessert after spicy food?,dish_query
+Can I get less spicy Tom Yum?,dietary_options
+Can I add extra chili to Pad Thai?,
+How big are the portions?,
+Do you have any promotions today?,
+What time do you open?,opening_hours
+What time do you close?,opening_hours
+What are your opening hours?,opening_hours
+Are you open on weekends?,opening_hours
+Do you serve lunch?,
+Do you serve dinner?,
+Can I pay with credit card?,payment_methods
+Do you accept cash?,payment_methods
+Do you accept e-wallets?,
+Can I pay with QR code?,payment_methods
+Is there a minimum spend for card payment?,payment_methods
+Which dish do you recommend?,menu_items
+What is the chef’s recommendation?,menu_items
+Any special dishes I should try?,
+Can I have a reservation for today?,make_reservation
+Book me a table,make_reservation
+Can I book a table?,make_reservation
+I want to reserve a table,make_reservation
+Do you have any promotion today?,
+Any current offers?,
+Are there any discounts available?,
+Do you have lunch set promotions?,
+Do you have dinner promotions?,
+Any weekend specials?,
+Do you have a dessert promotion?,dish_query
+Are there seasonal promotions?,
+Can I pay with cash?,payment_methods
+Do you take debit cards?,payment_methods
+Do you accept credit cards?,payment_methods
+Can I pay by QR code?,payment_methods
+Is online banking accepted?,
+Are international cards accepted?,payment_methods
+Can I use PayWave / contactless?,payment_methods
+Do you accept Apple Pay or Google Pay?,payment_methods

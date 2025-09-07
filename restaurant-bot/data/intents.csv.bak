@@ -1,0 +1,18 @@
+"Are you open on Sunday?",opening_hours
+"What time do you open tomorrow?",opening_hours
+"Is delivery available to Setapak?",delivery_info
+"Do you do home delivery?",delivery_info
+"Can I self-collect?",takeaway_info
+"Is pickup available?",takeaway_info
+"Reserve a table for two at 8pm",make_reservation
+"I want to book a table tonight",make_reservation
+"What’s your full address?",location_parking
+"Is there parking nearby?",location_parking
+"Can I pay by Visa?",payment_methods
+"Do you accept Touch 'n Go?",payment_methods
+"Any vegetarian options?",dietary_options
+"Do you have vegan meals?",dietary_options
+"Hello!",greet
+"Good morning,hello",greet
+"Thanks a lot, bye",goodbye
+"See you",goodbye

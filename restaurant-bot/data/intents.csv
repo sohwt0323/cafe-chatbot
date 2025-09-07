@@ -1,0 +1,150 @@
+text,intent
+"hi",greet
+"hello",greet
+"hey",greet
+"hi there",greet
+"good morning",greet
+"good afternoon",greet
+"good evening",greet
+"yo",greet
+"hiya",greet
+"hello bot",greet
+"hey there",greet
+"hi, how are you?",greet
+"greetings",greet
+"what’s up",greet
+"hey assistant",greet
+"hello there",greet
+"hey friend",greet
+"morning!",greet
+"hello again",greet
+"hi chatbot",greet
+
+"menu please",menu_items
+"show me the menu",menu_items
+"what do you serve?",menu_items
+"let me see your menu",menu_items
+"give me the menu",menu_items
+"i want to see the food list",menu_items
+"can you show the menu?",menu_items
+"what food do you have?",menu_items
+"show food options",menu_items
+"list the dishes",menu_items
+"what’s on the menu?",menu_items
+"menu list please",menu_items
+"what do you offer?",menu_items
+"can i see your dishes?",menu_items
+"let me check your food options",menu_items
+"show your dishes",menu_items
+"what meals do you serve?",menu_items
+"i’d like to see the menu",menu_items
+"please display the menu",menu_items
+"food menu please",menu_items
+
+"i want to make a booking",make_reservation
+"book a table",make_reservation
+"can i reserve a table?",make_reservation
+"please make a reservation",make_reservation
+"i want to book a table",make_reservation
+"can you reserve a table for me?",make_reservation
+"reserve a seat for tonight",make_reservation
+"i’d like to make a booking",make_reservation
+"reservation please",make_reservation
+"can i make a booking?",make_reservation
+"i want to reserve a table",make_reservation
+"book a table for 2",make_reservation
+"reserve for four people",make_reservation
+"book a dinner table",make_reservation
+"reserve for tomorrow",make_reservation
+"can you book a seat?",make_reservation
+"make a reservation for me",make_reservation
+"book a reservation",make_reservation
+"help me reserve a table",make_reservation
+"i need to make a booking",make_reservation
+
+"i like sweet food",dietary_options
+"any desserts?",dietary_options
+"what dessert do you have?",dietary_options
+"do you have vegan dishes?",dietary_options
+"are there vegetarian options?",dietary_options
+"any vegan choices?",dietary_options
+"can you recommend vegetarian meals?",dietary_options
+"do you serve halal food?",dietary_options
+"is there gluten free food?",dietary_options
+"any spicy dishes?",dietary_options
+"i like non-spicy food",dietary_options
+"do you have vegan desserts?",dietary_options
+"any low sugar items?",dietary_options
+"are there dairy free meals?",dietary_options
+"what vegetarian food is on the menu?",dietary_options
+"do you offer halal chicken?",dietary_options
+"can i get gluten free pasta?",dietary_options
+"are there vegan drinks?",dietary_options
+"any vegetarian soups?",dietary_options
+"do you have spicy noodles?",dietary_options
+
+"what is the price of butter fried chicken",price_query
+"how much is butter fried chicken",price_query
+"tell me the price of black pepper beef",price_query
+"what does mango sticky rice cost",price_query
+"price for spicy sambal prawns",price_query
+"how much is tom yum soup",price_query
+"can you tell me the price of ayam masak merah",price_query
+"what’s the cost of vegetable pad thai",price_query
+"how much does a dessert cost",price_query
+"price please",price_query
+
+"do you have milkshake",dish_query
+"any drinks",dish_query
+"do you serve curry puff",dish_query
+"what drinks do you have",menu_items
+"show me desserts",menu_items
+"i want a milkshake",dish_query
+"how much is curry puff",price_query
+"price of milkshake",price_query
+"what is the cost of chocolate milkshake",price_query
+
+"simple coffee price",price_query
+"price of simple coffee",price_query
+"how much is simple coffee",price_query
+"americano price",price_query
+"tomyam price",price_query
+"how much is tom yam soup",price_query
+"type of milkshake",menu_items
+"what milkshake do you have",menu_items
+"milkshake flavors",menu_items
+"do you have milkshake",dish_query
+"americano",dish_query
+"tom yum",dish_query
+
+"text","intent"
+"What time do you open?","opening_hours"
+"When do you open?","opening_hours"
+"what are your opening hours","opening_hours"
+"are you open daily","opening_hours"
+"until what time are you open","opening_hours"
+
+"where are you located","location_parking"
+"what is your address","location_parking"
+"how to get to your restaurant","location_parking"
+"is there parking","location_parking"
+"do you have free parking","location_parking"
+
+"what payment methods do you accept","payment_methods"
+"can I pay with GrabPay","payment_methods"
+"do you take credit cards","payment_methods"
+"can I use TNG eWallet","payment_methods"
+"do you accept cash","payment_methods"
+
+"do you deliver","delivery_info"
+"can I order delivery","delivery_info"
+"do you provide home delivery","delivery_info"
+"can you deliver to my house","delivery_info"
+"do you do delivery service","delivery_info"
+
+"can I take away my food","takeaway_info"
+"do you provide takeaway","takeaway_info"
+"is takeaway available","takeaway_info"
+"can I get my order for takeaway","takeaway_info"
+"do you offer pickup or takeaway","takeaway_info"
+

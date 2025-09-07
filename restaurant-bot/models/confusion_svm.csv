@@ -1,0 +1,13 @@
+,pred:delivery_info,pred:dietary_options,pred:dish_query,pred:greet,pred:intent,pred:location_parking,pred:make_reservation,pred:menu_items,pred:opening_hours,pred:payment_methods,pred:price_query,pred:takeaway_info
+true:delivery_info,0,0,0,0,0,0,0,0,0,0,0,0
+true:dietary_options,0,4,0,0,0,0,0,0,0,0,0,0
+true:dish_query,0,0,0,0,0,0,0,0,0,0,1,0
+true:greet,0,0,0,5,0,0,0,0,0,0,0,0
+true:intent,0,0,0,0,0,0,0,0,0,0,0,0
+true:location_parking,0,0,0,0,0,0,0,0,0,0,0,0
+true:make_reservation,0,0,0,0,0,0,3,0,0,0,0,0
+true:menu_items,0,1,0,0,0,0,0,3,0,0,1,0
+true:opening_hours,0,0,0,0,0,0,0,0,1,0,0,0
+true:payment_methods,1,0,0,0,0,0,1,0,0,0,0,0
+true:price_query,0,0,0,0,0,0,0,0,0,0,5,0
+true:takeaway_info,0,0,0,0,0,0,0,0,0,0,0,2

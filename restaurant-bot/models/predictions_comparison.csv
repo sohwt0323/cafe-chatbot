@@ -1,0 +1,29 @@
+text,true,LR,NB,SVM
+americano,dish_query,price_query,price_query,price_query
+any spicy dishes?,dietary_options,dietary_options,dietary_options,dietary_options
+are there vegetarian options?,dietary_options,dietary_options,dietary_options,dietary_options
+are you open daily,opening_hours,opening_hours,opening_hours,opening_hours
+can I pay with GrabPay,payment_methods,make_reservation,delivery_info,make_reservation
+can I take away my food,takeaway_info,takeaway_info,takeaway_info,takeaway_info
+can I use TNG eWallet,payment_methods,make_reservation,delivery_info,delivery_info
+can i reserve a table?,make_reservation,make_reservation,make_reservation,make_reservation
+can you recommend vegetarian meals?,dietary_options,dietary_options,dietary_options,dietary_options
+can you reserve a table for me?,make_reservation,make_reservation,make_reservation,make_reservation
+can you show the menu?,menu_items,menu_items,menu_items,menu_items
+do you provide takeaway,takeaway_info,takeaway_info,takeaway_info,takeaway_info
+do you serve halal food?,dietary_options,dietary_options,dietary_options,dietary_options
+good morning,greet,greet,greet,greet
+greetings,greet,greet,dietary_options,greet
+hello again,greet,greet,greet,greet
+hey friend,greet,greet,greet,greet
+hi chatbot,greet,greet,greet,greet
+how much is tom yam soup,price_query,price_query,price_query,price_query
+how much is tom yum soup,price_query,price_query,price_query,price_query
+make a reservation for me,make_reservation,make_reservation,make_reservation,make_reservation
+menu list please,menu_items,menu_items,menu_items,menu_items
+price for spicy sambal prawns,price_query,price_query,price_query,price_query
+price of simple coffee,price_query,price_query,price_query,price_query
+price please,price_query,price_query,price_query,price_query
+type of milkshake,menu_items,dish_query,price_query,price_query
+what food do you have?,menu_items,dietary_options,dietary_options,dietary_options
+what meals do you serve?,menu_items,menu_items,menu_items,menu_items

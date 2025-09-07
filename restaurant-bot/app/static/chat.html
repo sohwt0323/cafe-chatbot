@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Restaurant Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --bg:#0e1118; --bg2:#0b0f15;
+      --card:#151a23; --border:#222839; --muted:#9aa4b2; --text:#e7eaf0;
+      --user1:#2c67ff; --user2:#6ca8ff; --user-border:rgba(124,171,255,0.35);
+      --bot1:#16a34a;  --bot2:#4ade80;  --bot-border:rgba(52,211,153,0.35);
+      --chip:#1a2030; --chip-border:#2a3347; --input-bg:#0e1422;
+      --scroll-track:#131926; --scroll-thumb:#283149; --scroll-thumb-hover:#344066;
+      --abg:#101626; --aborder:#25304a; --aactive:#2c67ff;
+      --sys-bg:#1b2130; --sys-border:#36445f; --sys-text:#dbe7ff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, #1b2233 0%, transparent 55%),
+        radial-gradient(900px 600px at 110% 10%, #1a1f2a 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+      display:flex; justify-content:center; padding:28px 20px;
+    }
+    .wrap{ width:min(980px, 96vw) }
+
+    header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px }
+    .title{ font-size:22px; font-weight:700 }
+    .status{ font-size:12px; color:var(--muted); display:flex; align-items:center; gap:8px }
+    .dot{ width:8px; height:8px; border-radius:50%; background:#22c55e; box-shadow:0 0 0 3px rgba(34,197,94,.15) }
+
+    /* Algorithm toolbar */
+    .algobar{ display:flex; align-items:center; gap:8px; margin:8px 0 12px; flex-wrap:wrap }
+    .algolabel{ font-size:12px; color:var(--muted) }
+    .seg{ display:flex; background:var(--abg); border:1px solid var(--aborder); border-radius:10px; overflow:hidden;
+          box-shadow:0 8px 20px rgba(0,0,0,.25) }
+    .algbtn{
+      border:0; background:transparent; color:#cfd8e3; padding:8px 12px; font-size:13px; cursor:pointer;
+      border-right:1px solid var(--aborder); transition:background .15s ease, color .15s ease;
+    }
+    .algbtn:last-child{ border-right:none }
+    .algbtn:hover{ background:#172036 }
+    .algbtn.active{ background:var(--aactive); color:white }
+
+    .card{
+      background:rgba(21,26,35,.85); border:1px solid var(--border); border-radius:16px;
+      box-shadow:0 12px 40px rgba(0,0,0,.35); overflow:hidden; backdrop-filter: blur(6px);
+    }
+
+    /* Hint chips */
+    .guide{ position:sticky; top:0; z-index:1; padding:14px 16px; border-bottom:1px solid var(--border);
+            background:linear-gradient(180deg, rgba(19,24,36,.92), rgba(19,24,36,.8)); display:flex; gap:8px; flex-wrap:wrap }
+    .hint{
+      background:var(--chip); border:1px solid var(--chip-border); color:#cfd8e3;
+      padding:8px 12px; border-radius:999px; font-size:13px; cursor:pointer;
+      transition:transform .05s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .hint:hover{ transform:translateY(-1px); background:#1f2636; border-color:#3a4661; box-shadow:0 6px 14px rgba(0,0,0,.25) }
+
+    /* Chat area */
+    .chat{ height:60vh; min-height:360px; max-height:70vh; overflow-y:auto; padding:18px 16px; scroll-behavior:smooth }
+    .chat::-webkit-scrollbar{ width:12px }
+    .chat::-webkit-scrollbar-track{ background:var(--scroll-track); border-radius:12px }
+    .chat::-webkit-scrollbar-thumb{ background:var(--scroll-thumb); border-radius:12px; border:2px solid var(--scroll-track) }
+    .chat::-webkit-scrollbar-thumb:hover{ background:var(--scroll-thumb-hover) }
+    .chat{ scrollbar-color: var(--scroll-thumb) var(--scroll-track); scrollbar-width: thin }
+
+    /* Messages */
+    .msg{ display:flex; gap:10px; margin:10px 0; align-items:flex-end }
+    .msg.user{ flex-direction: row-reverse; }        /* flip order for user so avatar stays on the right */
+    .avatar{
+      width:30px; height:30px; flex:0 0 30px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:14px; color:white; user-select:none; border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 4px 16px rgba(0,0,0,.25);
+    }
+    .avatar.bot{ background:linear-gradient(135deg, var(--bot1), var(--bot2)) }
+    .avatar.user{ background:linear-gradient(135deg, var(--user1), var(--user2)) }
+
+    .block{ display:flex; flex-direction:column; max-width: calc(100% - 40px); } /* leave room for avatar */
+    .who{ font-size:12px; opacity:.85; margin:0 2px 6px 2px }
+    .typing{ opacity:.75; font-style:italic }
+
+    .bubble{
+      position:relative; display:inline-block;      /* prevent collapse */
+      padding:12px 14px; border-radius:16px; max-width:72%;
+      min-width: 80px;                               /* NEW: avoid super-narrow bubbles */
+      line-height:1.45; white-space:pre-wrap; word-break:break-word; font-size:15px;
+      border:1px solid transparent; box-shadow:0 8px 24px rgba(0,0,0,.25);
+    }
+    .bot .bubble{ background:linear-gradient(180deg, rgba(22,163,74,.14), rgba(18,112,56,.14)); border-color:var(--bot-border); color:#cfeedd }
+    .bot .bubble::after{
+      content:""; position:absolute; left:-6px; bottom:8px; width:10px; height:10px;
+      background:inherit; border-left:1px solid var(--bot-border); border-bottom:1px solid var(--bot-border);
+      transform:rotate(45deg); border-radius:2px;
+    }
+    .user .bubble{ background:linear-gradient(135deg, rgba(44,103,255,.25), rgba(108,168,255,.18)); border-color:var(--user-border); color:#e9f1ff }
+    .user .bubble::after{
+      content:""; position:absolute; right:-6px; bottom:8px; width:10px; height:10px;
+      background:inherit; border-right:1px solid var(--user-border); border-bottom:1px solid var(--user-border);
+      transform:rotate(45deg); border-radius:2px;
+    }
+
+    /* System message bubble (centered) */
+    .sys{ justify-content:center }
+    .sys .bubble{
+      max-width:90%; text-align:center; color:var(--sys-text);
+      background:linear-gradient(180deg, rgba(52,84,140,.22), rgba(27,33,48,.5));
+      border-color:var(--sys-border);
+      min-width:auto;
+    }
+
+    /* Footer */
+    .footer{ display:flex; align-items:flex-end; gap:10px; padding:14px; border-top:1px solid var(--border);
+             background:linear-gradient(180deg, #111623, #0f1420) }
+    #userInput{
+      flex:1; resize:none; min-height:48px; max-height:140px; padding:12px 14px;
+      border-radius:14px; border:1px solid #2a3347; background:var(--input-bg); color:var(--text);
+      outline:none; font-size:15px; box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+    }
+    #userInput::placeholder{ color:#7f8aa1 }
+    .send{
+      background:#2c67ff; color:#fff; border:none; border-radius:12px; padding:12px 16px; font-weight:700;
+      cursor:pointer; transition:filter .15s ease, transform .04s ease, box-shadow .25s ease;
+      box-shadow:0 10px 22px rgba(44,103,255,.25);
+    }
+    .send:hover{ filter:brightness(1.06) }
+    .send:active{ transform:translateY(1px) }
+
+    .hintline{ color:var(--muted); font-size:12px; margin:6px 0 14px 18px }
+    .smallkbd{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+               font-size:11px; padding:2px 6px; border-radius:6px; background:#0e1422; border:1px solid #2a3347; color:#cbd5e1 }
+    @media (max-width:640px){ .bubble{ max-width:84% } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">Restaurant Chatbot</div>
+      <div class="status"><span class="dot" aria-hidden="true"></span> Online • Ask me anything</div>
+    </header>
+
+    <!-- Algorithm Toolbar -->
+    <div class="algobar" aria-label="Select training algorithm">
+      <div class="algolabel">Algorithm:</div>
+      <div class="seg" id="algoSeg">
+        <button class="algbtn active" data-algo="lr"  title="Logistic Regression">LogReg</button>
+        <button class="algbtn"         data-algo="nb"  title="Naive Bayes">Naive Bayes</button>
+        <button class="algbtn"         data-algo="svm" title="SVM">SVM</button>
+      </div>
+      <div class="algolabel" id="algoInfo" style="margin-left:6px;">(LR selected)</div>
+    </div>
+
+    <div class="card">
+      <!-- Quick prompts -->
+      <div class="guide" id="guide">
+        <button class="hint" data-text="opening hours">Opening hours</button>
+        <button class="hint" data-text="payment methods">Payment methods</button>
+        <button class="hint" data-text="what is the best seller?">Best sellers</button>
+        <button class="hint" data-text="suggest one milkshake">Suggest a milkshake</button>
+        <button class="hint" data-text="price of Ayam Masak Merah">Price of Ayam Masak Merah</button>
+        <button class="hint" data-text="book a table for me">Book a table</button>
+        <button class="hint" data-text="what is the chef recommendation">Chef’s recommendation</button>
+      </div>
+
+      <!-- Chat window -->
+      <div class="chat" id="chat" aria-live="polite" aria-label="Chat messages"></div>
+
+      <!-- Input -->
+      <div class="footer">
+        <textarea id="userInput" placeholder="Type your message… (Press Enter to send, Shift+Enter for a new line)" aria-label="Type your message"></textarea>
+        <button id="sendBtn" class="send" aria-label="Send message">Send</button>
+      </div>
+      <div class="hintline">Tip: <span class="smallkbd">Enter</span> to send • <span class="smallkbd">Shift</span>+<span class="smallkbd">Enter</span> for a new line</div>
+    </div>
+  </div>
+
+  <script>
+    const API = "http://127.0.0.1:5055";
+    const chatEl = document.getElementById("chat");
+    const inputEl = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+    const guideEl = document.getElementById("guide");
+    const algoSeg = document.getElementById("algoSeg");
+    const algoInfo = document.getElementById("algoInfo");
+
+    const VALID_ALGOS = ["lr","nb","svm"];
+    let currentAlgo = "lr";
+
+    function escapeHTML(str){
+      return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
+    // Append chat bubble (user/bot/system)
+    function appendMessage(role, text, {typing=false}={}){
+      const row = document.createElement("div");
+      row.className = `msg ${role}`;
+
+      if(role !== "sys"){
+        const avatar = document.createElement("div");
+        avatar.className = `avatar ${role}`;
+        avatar.textContent = role === "user" ? "🧑" : "🤖";
+        row.appendChild(avatar);                        // avatar FIRST for both roles
+      } else {
+        row.classList.add("sys");
+      }
+
+      const block = document.createElement("div");
+      block.className = "block";
+
+      if(role !== "sys"){
+        const who = document.createElement("div");
+        who.className = "who";
+        who.textContent = role === "user" ? "You" : "Bot";
+        block.appendChild(who);
+      }
+
+      const bubble = document.createElement("div");
+      bubble.className = "bubble";
+      bubble.innerHTML = typing ? `<span class="typing">typing…</span>` : escapeHTML(text);
+
+      block.appendChild(bubble);
+      row.appendChild(block);
+
+      chatEl.appendChild(row);
+      chatEl.scrollTop = chatEl.scrollHeight;
+      return bubble;
+    }
+
+    function announce(msg){ appendMessage("sys", msg); }
+
+    async function sendMessage(textOverride){
+      const text = (textOverride ?? inputEl.value).trim();
+      if(!text) return;
+      appendMessage("user", text);
+      inputEl.value = "";
+
+      const typingBubble = appendMessage("bot", "", {typing:true});
+      try{
+        const res = await fetch(`${API}/chat`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text, algo: currentAlgo })
+        });
+        const data = await res.json();
+        typingBubble.innerHTML = escapeHTML(data.reply ?? "…") +
+          (data.algo ? ` <br><small style="opacity:.6">[${data.algo.toUpperCase()}]</small>` : "");
+      }catch(err){
+        typingBubble.innerHTML = `<span class="typing">Error: ${escapeHTML(err.message)}</span>`;
+      }finally{
+        chatEl.scrollTop = chatEl.scrollHeight;
+      }
+    }
+
+    // Enter to send (Shift+Enter = newline)
+    inputEl.addEventListener("keydown", (e)=>{
+      if(e.key === "Enter" && !e.shiftKey){
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+    inputEl.addEventListener("input", ()=>{
+      inputEl.style.height = "auto";
+      inputEl.style.height = Math.min(inputEl.scrollHeight, 140) + "px";
+    });
+    sendBtn.addEventListener("click", ()=> sendMessage());
+
+    // Hint chips
+    guideEl.addEventListener("click", (e)=>{
+      const btn = e.target.closest(".hint"); if(!btn) return;
+      sendMessage(btn.getAttribute("data-text") || btn.textContent.trim());
+    });
+
+    async function setAlgoUI(algo){
+      if(!VALID_ALGOS.includes(algo)) algo = "lr";
+      currentAlgo = algo;
+      [...algoSeg.querySelectorAll(".algbtn")].forEach(b=>{
+        b.classList.toggle("active", b.getAttribute("data-algo") === algo);
+      });
+      algoInfo.textContent = `(${algo.toUpperCase()} selected)`;
+      const url = new URL(location.href);
+      url.searchParams.set("algo", algo);
+      history.replaceState(null, "", url.toString());
+      try{
+        const r = await fetch(`${API}/set_algo`, {
+          method:"POST", headers:{ "Content-Type":"application/json" },
+          body: JSON.stringify({ algo })
+        });
+        if(!r.ok){
+          const { error } = await r.json().catch(()=>({error:"Unknown error"}));
+          announce(`⚠️ Couldn't switch model: ${escapeHTML(error || "server error")}`);
+          return;
+        }
+        announce(`✅ Switched algorithm to ${algo.toUpperCase()}.`);
+      }catch(e){
+        announce(`⚠️ Couldn't reach server to switch algorithm.`);
+      }
+    }
+
+    algoSeg.addEventListener("click", (e)=>{
+      const btn = e.target.closest(".algbtn"); if(!btn) return;
+      setAlgoUI(btn.getAttribute("data-algo") || "lr");
+    });
+
+    (function init(){
+      const urlAlgo = new URLSearchParams(location.search).get("algo");
+      setAlgoUI(urlAlgo || "lr");
+      setTimeout(()=>{
+        appendMessage("bot",
+          "Hi! I’m your restaurant assistant. Choose the algorithm above (LogReg / Naive Bayes / SVM), then ask about opening hours, payment, best sellers, prices (e.g., “price of Ayam Masak Merah”), or say “book a table”.");
+      }, 200);
+    })();
+  </script>
+</body>
+</html>
